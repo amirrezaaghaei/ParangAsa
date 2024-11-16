@@ -1,78 +1,118 @@
 "use client";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { navItems } from "@/data";
 
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
-}) => {
-  const { scrollYProgress } = useScroll();
+type NavigationItem = {
+  name: string;
+  href: string;
+  current: boolean;
+};
 
-  const [visible, setVisible] = useState(false);
+const navigation: NavigationItem[] = [
+  { name: navItems[0].name, href: navItems[0].link, current: false },
+  { name: navItems[1].name, href: navItems[1].link, current: false },
+  { name: navItems[2].name, href: navItems[2].link, current: false },
+];
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
-    if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+function classNames(...classes: (string | false | null | undefined)[]): string {
+  return classes.filter(Boolean).join(" ");
+}
 
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
-    }
-  });
+export default function NavBar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
-        className={cn(
-          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border rounded-2xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-5  items-center justify-center space-x-4 border-white/[0.2] bg-black-100",
-          className
-        )}
-      >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </Link>
-        ))}
-      </motion.div>
-    </AnimatePresence>
+    <Disclosure
+      as="nav"
+      className={classNames(
+        "fixed top-0 z-50 w-full transition-all duration-500",
+        isScrolled
+          ? "bg-white/90 backdrop-blur-xl border-b border-gray-600/10"
+          : "bg-transparent"
+      )}
+    >
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div
+          className={`relative flex flex-row-reverse items-center justify-between ${classNames(
+            "transition-all duration-[850ms]",
+            isScrolled ? "h-16" : "h-24"
+          )}`}
+        >
+          {/* Mobile menu button */}
+          <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+            <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+              <XMarkIcon className="hidden h-6 w-6" aria-hidden="true" />
+            </DisclosureButton>
+          </div>
+
+          {/* Logo */}
+          <div className="flex-1 flex flex-row-reverse items-center justify-center sm:items-stretch sm:justify-start">
+            <img
+              alt="Your Company"
+              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+              className="h-8 w-auto"
+            />
+          </div>
+
+          {/* Desktop Links */}
+          <div className="hidden sm:ml-6 sm:block">
+            <div className="flex flex-row-reverse space-x-4">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={classNames(
+                    item.current
+                      ? "bg-white text-black font-medium"
+                      : isScrolled
+                      ? "text-gray-700 hover:text-gray-600 font-medium"
+                      : "text-white hover:text-gray-200 font-medium",
+                    "px-3 py-2 rounded-md text-sm font-medium"
+                  )}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Links */}
+      <DisclosurePanel className="sm:hidden">
+        <div className="space-y-1 px-2 pt-2 pb-3">
+          {navigation.map((item) => (
+            <DisclosureButton
+              key={item.name}
+              as="a"
+              href={item.href}
+              className={classNames(
+                item.current
+                  ? "bg-white text-black font-medium"
+                  : "text-gray-600 hover:text-indigo-800 font-medium",
+                "block px-3 py-2 rounded-md text-base font-medium"
+              )}
+            >
+              {item.name}
+            </DisclosureButton>
+          ))}
+        </div>
+      </DisclosurePanel>
+    </Disclosure>
   );
-};
+}

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const vazirMatn = localFont({ src: "./fonts/Vazirmatn[wght].woff2" });
 
 export const metadata: Metadata = {
-  title: "AmirReza's Portfolio",
+  title: "نیما پرنگ آسا",
   description: "Modern & Minimal Design Portfolio",
 };
 
@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={vazirMatn.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
