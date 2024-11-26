@@ -62,7 +62,7 @@ export function AuroraBackgroundDemo() {
             <div className="text-center">
               <TextGenerateEffect
                 words={heroData.headline}
-                className="text-balance text-4xl font-extrabold tracking-tight text-white sm:text-7xl"
+                className="text-balance text-3xl font-extrabold tracking-tight text-[#0F120F] sm:text-7xl"
               />
               {/* <h1 className="text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Lorem ipsum dolor sit amet consectetur

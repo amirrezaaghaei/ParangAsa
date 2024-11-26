@@ -11,6 +11,7 @@ import Approach from "@/components/Approach";
 import Footer from "@/components/Footer";
 import { AppleCardsCarouselDemo } from "@/components/CardsCarousel";
 import Contact from "@/components/Contact";
+import Plans from "@/components/Plans";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <WobbleCardDemo />
         <AppleCardsCarouselDemo />
         <Clients />
+        <Plans />
         <Contact />
         {/* <RecentProjects />
         <Experience />

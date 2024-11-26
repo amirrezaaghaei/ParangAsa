@@ -95,7 +95,7 @@ export default function NavBar() {
 
       {/* Mobile Links */}
       <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
+        <div className="bg-white h-screen space-y-1 px-6 pt-2 pb-3">
           {navigation.map((item) => (
             <DisclosureButton
               key={item.name}
@@ -105,7 +105,7 @@ export default function NavBar() {
                 item.current
                   ? "bg-white text-black font-medium"
                   : "text-gray-600 hover:text-indigo-800 font-medium",
-                "block px-3 py-2 rounded-md text-base font-medium"
+                "block px-3 py-12 rounded-md text-xl underline font-medium text-right"
               )}
             >
               {item.name}
