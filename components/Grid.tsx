@@ -7,7 +7,7 @@ import { gridItems } from "@/data";
 export default function WobbleCardDemo() {
   return (
     <div className="pt-28 pb-24 sm:pb-32" id="about">
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl lg:max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-base/7 font-semibold text-primary-600">
           {gridItems[0].kicker}
         </h2>

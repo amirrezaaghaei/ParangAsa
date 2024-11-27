@@ -53,7 +53,7 @@ export function AuroraBackgroundDemo() {
         className="relative flex flex-col items-center justify-center"
       >
         <div className="relative z-10 isolate px-6 lg:px-8 backdrop-blur-[1px]">
-          <div className="mx-auto max-w-2xl pt-32 sm:pt-48 lg:pt-48 pb-4 sm:pb-20 lg:pb-28">
+          <div className="mx-auto max-w-2xl pt-28 sm:pt-48 lg:pt-48 pb-4 sm:pb-20 lg:pb-28">
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-white ring-1 ring-white/40 hover:ring-gray-50/20">
                 {heroData.kicker}
@@ -62,7 +62,7 @@ export function AuroraBackgroundDemo() {
             <div className="text-center">
               <TextGenerateEffect
                 words={heroData.headline}
-                className="text-balance text-3xl font-extrabold tracking-tight text-[#0F120F] sm:text-7xl"
+                className="text-balance text-4xl font-extrabold tracking-tight text-white sm:text-7xl"
               />
               {/* <h1 className="text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Lorem ipsum dolor sit amet consectetur
@@ -73,7 +73,7 @@ export function AuroraBackgroundDemo() {
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="#contact"
-                  className="rounded-md bg-neutral-50 px-4 py-2 text-black shadow-sm hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-50"
+                  className="rounded-md bg-neutral-50 px-8 py-4 text-black shadow-sm hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-50"
                 >
                   {heroData.ctaLabel}
                 </a>

@@ -22,7 +22,7 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 const Footer = () => {
   return (
     <footer
-      className="w-full px-6 sm:px-8 py-20 sm:py-24 mx-2 bg-neutral-50"
+      className="w-full px-6 sm:px-8 py-20 sm:py-24 bg-neutral-50"
       id="contact"
     >
       <nav className="flex flex-row-reverse justify-center items-center">

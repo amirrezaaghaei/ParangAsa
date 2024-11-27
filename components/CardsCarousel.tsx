@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { carouselData } from "@/data";
 
 export function AppleCardsCarouselDemo() {
   const cards = cardsData.map((card, index) => (
@@ -10,12 +11,15 @@ export function AppleCardsCarouselDemo() {
 
   return (
     <div
-      className="mx-auto max-w-7xl w-full h-full py-20 px-6 lg:px-8"
+      className="mx-auto max-w-7xl w-full h-full py-16 sm:py-20 px-6 lg:px-8"
       id="projects"
     >
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans text-right">
-        پروژه‌های موفق
-      </h2>
+      <h2 className="text-center text-base/7 font-semibold text-primary-600">
+          {carouselData.kicker}
+        </h2>
+        <p className="mx-auto mt-2 sm:mt-3 max-w-lg text-center text-4xl font-medium tracking-normal leading-[1.25] text-gray-950 sm:text-5xl">
+          {carouselData.title}
+        </p>
       <Carousel items={cards} />
     </div>
   );

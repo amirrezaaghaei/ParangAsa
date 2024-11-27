@@ -1,5 +1,5 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
-import { tiers } from "@/data";
+import { plans } from "@/data";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -22,17 +22,17 @@ export default function Plans() {
       </div>
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-base/7 font-semibold text-primary-600">
-          پکیج‌های آموزشی
+          {plans.header.kicker}
         </h2>
         <p className="mt-2 text-balance text-4xl font-semibold leading-[1.25] sm:leading-[1.25] text-gray-900 sm:text-5xl">
-          پکیج آموزشی متناسب با نیازهای خود را انتخاب کنید
+          {plans.header.title}
         </p>
       </div>
       <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-normal text-gray-600 sm:text-xl/8">
-        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+        {plans.header.subtitle}
       </p>
-      <div className="mx-auto mt-16 lg:px-8 grid gap-2 max-w-7xl grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:grid-cols-3">
-        {tiers.map((tier, tierIdx) => (
+      <div className="mx-auto mt-16 grid gap-2 max-w-7xl grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:grid-cols-3">
+        {plans.tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}
             className={classNames(
@@ -122,7 +122,7 @@ export default function Plans() {
                 tier.featured
                   ? "bg-primary-500 text-white shadow-sm hover:bg-primary-400 focus-visible:outline-primary-500"
                   : "text-neutral-600 ring-1 ring-inset ring-neutral-200 hover:ring-neutral-300 focus-visible:outline-neutral-600",
-                "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
+                "mt-8 block rounded-md px-4 py-3 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >
               تماس جهت دریافت مشاوره
