@@ -18,8 +18,8 @@ export default function Home() {
         <WobbleCardDemo />
         <AppleCardsCarouselDemo />
         <Clients />
-        {/* <Plans />
-        <Contact /> */}
+        <Plans />
+        {/* <Contact /> */}
         <Footer />
       </div>
     </main>
