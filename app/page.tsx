@@ -16,8 +16,8 @@ export default function Home() {
         <NavBar />
         <AuroraBackgroundDemo />
         <WobbleCardDemo />
-        {/* <AppleCardsCarouselDemo />
-        <Clients />
+        <AppleCardsCarouselDemo />
+        {/* <Clients />
         <Plans />
         <Contact /> */}
         <Footer />
