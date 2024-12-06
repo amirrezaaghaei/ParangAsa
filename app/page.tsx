@@ -17,8 +17,8 @@ export default function Home() {
         <AuroraBackgroundDemo />
         <WobbleCardDemo />
         <AppleCardsCarouselDemo />
-        {/* <Clients />
-        <Plans />
+        <Clients />
+        {/* <Plans />
         <Contact /> */}
         <Footer />
       </div>
