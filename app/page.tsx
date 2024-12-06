@@ -14,12 +14,12 @@ export default function Home() {
     >
       <div className="w-full">
         <NavBar />
-        <AuroraBackgroundDemo />
+        {/* <AuroraBackgroundDemo />
         <WobbleCardDemo />
         <AppleCardsCarouselDemo />
         <Clients />
         <Plans />
-        <Contact />
+        <Contact /> */}
         <Footer />
       </div>
     </main>
