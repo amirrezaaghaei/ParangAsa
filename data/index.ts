@@ -83,7 +83,7 @@ export const plans = {
       title: "سطح متوسط",
       subtitle: "مهارت‌های تخصصی و حرفه‌ای",
       id: "tier-intermediate",
-      href: "#",
+      href: "#contact",
       tierDuration: "۲۴",
       description: "توسعه مهارت‌های کاربردی و آماده‌سازی برای چالش‌های شغلی",
       features: [
@@ -102,7 +102,7 @@ export const plans = {
       title: "سطح پیشرفته",
       subtitle: "مهارت‌های استراتژیک و نوآوری",
       id: "tier-advanced",
-      href: "#",
+      href: "#contact",
       tierDuration: "۲۸",
       description:
         "آماده‌سازی مدیران و متخصصان برای مدیریت استراتژیک خدمات پس از فروش و مشتریان",
@@ -122,7 +122,7 @@ export const plans = {
       title: "سطح مقدماتی",
       subtitle: "آشنایی با مبانی و توسعه فردی",
       id: "tier-basic",
-      href: "#",
+      href: "#contact",
       tierDuration: "۱۸",
       description:
         "ایجاد پایه قوی از مهارت‌های فردی و مفاهیم اولیه خدمات پس از فروش و امور مشتریان",
