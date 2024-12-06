@@ -1,10 +1,12 @@
+import dynamic from "next/dynamic";
+
 import { AuroraBackgroundDemo } from "../components/Hero";
 import NavBar from "@/components/ui/FloatingNav";
 import WobbleCardDemo from "@/components/Grid";
 import Clients from "@/components/Clients";
 import Footer from "@/components/Footer";
 import { AppleCardsCarouselDemo } from "@/components/CardsCarousel";
-import Contact from "@/components/Contact";
+const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
 import Plans from "@/components/Plans";
 
 export default function Home() {
@@ -19,7 +21,7 @@ export default function Home() {
         <AppleCardsCarouselDemo />
         <Clients />
         <Plans />
-        {/* <Contact /> */}
+        <Contact />
         <Footer />
       </div>
     </main>
