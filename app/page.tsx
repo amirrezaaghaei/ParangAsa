@@ -15,8 +15,8 @@ export default function Home() {
       <div className="w-full">
         <NavBar />
         <AuroraBackgroundDemo />
-        {/* <WobbleCardDemo />
-        <AppleCardsCarouselDemo />
+        <WobbleCardDemo />
+        {/* <AppleCardsCarouselDemo />
         <Clients />
         <Plans />
         <Contact /> */}
