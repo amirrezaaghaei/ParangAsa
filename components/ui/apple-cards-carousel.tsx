@@ -40,7 +40,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const carouselRef = React.useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = React.useState(true);
   const [canScrollRight, setCanScrollRight] = React.useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex] = useState(0);
   const [currentCard, setCurrentCard] = useState<Card | null>(null);
 
   useEffect(() => {

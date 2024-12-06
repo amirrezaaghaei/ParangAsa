@@ -1,7 +1,4 @@
-import { FaLocationArrow } from "react-icons/fa6";
-
 import { navItems, socialMedia } from "@/data";
-import MagicButton from "./MagicButton";
 
 type NavigationItem = {
   name: string;
@@ -14,10 +11,6 @@ const navigation: NavigationItem[] = [
   { name: navItems[1].name, href: navItems[1].link, current: false },
   { name: navItems[2].name, href: navItems[2].link, current: false },
 ];
-
-function classNames(...classes: (string | false | null | undefined)[]): string {
-  return classes.filter(Boolean).join(" ");
-}
 
 const Footer = () => {
   return (

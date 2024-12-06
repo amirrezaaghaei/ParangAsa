@@ -6,13 +6,6 @@ import { AuroraBackground } from "./ui/aurora-background";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { heroData } from "@/data";
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
-];
-
 export function AuroraBackgroundDemo() {
   return (
     <AuroraBackground>

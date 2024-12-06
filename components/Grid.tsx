@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import { gridItems } from "@/data";
@@ -31,14 +30,24 @@ export default function WobbleCardDemo() {
               </p>
             </div>
           </WobbleCard>
-          <WobbleCard containerClassName="col-span-1 min-h-[300px]">
+          <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-tertiary-700">
+            <div className="max-w-xs">
+              <h2 className="text-right text-balance text-2xl sm:text-3xl font-semibold tracking-normal text-white">
+                {gridItems[3].title}
+              </h2>
+              <p className="mt-2 text-right text-base font-medium text-neutral-50">
+                {gridItems[3].description}
+              </p>
+            </div>
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-secondary-600">
             <div className="flex gap-1 lg:gap-5 w-fit absolute -bottom-3 lg:-bottom-2 -left-3 lg:-left-2">
               {/* Skill list */}
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-4">
                 {(gridItems[2]?.leftList ?? []).map((item, index) => (
                   <span
                     key={index} // It's a good practice to include a key for each mapped item
-                    className="py-4 lg:px-6 px-5 text-sm lg:text-base rounded-lg text-center text-white/80 bg-secondary-600 -z-20"
+                    className="py-4 lg:px-4 pl-4 pr-3 text-sm lg:text-base rounded-lg text-center text-white/80 bg-secondary-600 -z-20"
                   >
                     {item}
                   </span>
@@ -64,16 +73,6 @@ export default function WobbleCardDemo() {
               </h2>
               <p className="mt-2 text-right text-base font-medium text-neutral-50">
                 {gridItems[2].description}
-              </p>
-            </div>
-          </WobbleCard>
-          <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-tertiary-700">
-            <div className="max-w-xs">
-              <h2 className="text-right text-balance text-2xl sm:text-3xl font-semibold tracking-normal text-white">
-                {gridItems[3].title}
-              </h2>
-              <p className="mt-2 text-right text-base font-medium text-neutral-50">
-                {gridItems[3].description}
               </p>
             </div>
           </WobbleCard>

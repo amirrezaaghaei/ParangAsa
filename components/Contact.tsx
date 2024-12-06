@@ -1,12 +1,11 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import animationData from "@/data/confetti.json";
 import Lottie from "react-lottie";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Contact() {
-  const [agreed, setAgreed] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -59,7 +58,7 @@ export default function Contact() {
 
     setIsLoading(true);
 
-    let form = {
+    const form = {
       name,
       phone,
     };
@@ -75,7 +74,6 @@ export default function Contact() {
       });
 
       if (rawResponse.ok) {
-        const content = await rawResponse.json();
         showNotification("اطلاعات شما با موفقیت ارسال شد", "success");
         setSubmitted(true);
 
