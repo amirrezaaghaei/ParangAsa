@@ -5,7 +5,7 @@ import React from "react";
 import { companies } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
 
-const Clients = () => {
+const LogoCloud = () => {
   return (
     <section id="testimonials" className="py-32">
       <h1 className="text-lg font-semibold text-zinc-900 text-center">
@@ -28,4 +28,4 @@ const Clients = () => {
   );
 };
 
-export default Clients;
+export default LogoCloud;

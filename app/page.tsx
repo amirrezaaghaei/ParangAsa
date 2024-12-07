@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { AuroraBackgroundDemo } from "../components/Hero";
 import NavBar from "@/components/ui/FloatingNav";
 import WobbleCardDemo from "@/components/Grid";
-import Clients from "@/components/Clients";
+import LogoCloud from "@/components/LogoCloud";
 import Footer from "@/components/Footer";
 import { AppleCardsCarouselDemo } from "@/components/CardsCarousel";
 const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
@@ -19,7 +19,7 @@ export default function Home() {
         <AuroraBackgroundDemo />
         <WobbleCardDemo />
         <AppleCardsCarouselDemo />
-        <Clients />
+        <LogoCloud />
         <Plans />
         <Contact />
         <Footer />
